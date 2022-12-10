@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${MYSQL_USUARIO}
+    url: ${MYSQL_JDBC}
+    password: ${MYSQL_PASSWORD}
+  jpa:
+    show-sql: 'true'
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8083/auth/realms/baeldung
+          jwk-set-uri: http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/certs
