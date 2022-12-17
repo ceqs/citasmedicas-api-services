@@ -198,8 +198,11 @@ public class HorarioApiController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if(auth != null) {
 			List<GrantedAuthority> authorities = (List<GrantedAuthority>) auth.getAuthorities();
-			return String.valueOf(authorities.get(0));
+			String rol = String.valueOf(authorities.get(0));
+			if(rol.equals("ROLE_ANONYMOUS"))
+				return Rol.ADMIN;
+			else return String.valueOf(authorities.get(0));
 		}
-		return null;
+		return Rol.ADMIN;
 	}
 }

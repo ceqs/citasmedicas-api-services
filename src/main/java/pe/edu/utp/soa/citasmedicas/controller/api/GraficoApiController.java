@@ -8,7 +8,7 @@ import pe.edu.utp.soa.citasmedicas.model.Grafico;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/v2")
+@RequestMapping(value = "/v1")
 @CrossOrigin("*")
 public class GraficoApiController {
 
